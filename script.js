@@ -9,16 +9,37 @@ form.addEventListener("submit", (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      document.getElementById("result").innerHTML = "";
       data.forEach((obj) => {
         var div = $('<div>', {
-          "class": "bucket"
+          "class": "bucket",
+          "id": obj.id,
+          "onClick": () => alert("siema")
         });
-        var span = $('<span>', {
-          "Repo:": obj.name,
-          "Description:": obj.description,
-          "URL:": obj.html_url
+        var repo = $('<div>', {
+          "text": `Repo: ${obj.name}`
+        })
+        var desc = $('<div>', {
+          "text": `Description: ${obj.description}`,
         });
-        div.append(span).appendTo(".result");
+        var urltext = $('<span>', {
+          "text": "URL: ",
+        })
+        var url = $('<a>', {
+          "text": obj.html_url,
+          "href": obj.html_url
+        })
+        div.append(repo).appendTo(".result");
+        div.append(desc).appendTo(".result");
+        div.append(urltext).append(url).appendTo(".result");
       });
-    });
+    })
+    .catch((err) => {
+      console.log(err)
+      var span = $('<span>', {
+        "text": "Nie znaleziono organizacji.",
+        "id": "error-span"
+      })
+      span.appendTo(".result")
+    })
 });
