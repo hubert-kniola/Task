@@ -1,25 +1,24 @@
-var form = document.getElementById("mainForm")
+var form = document.getElementById("form");
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-const fetchOrg = async (org) => {
-    console.log(org)
-    const apiCall = await fetch(`https://api.github.com/orgs/${org}/repos`)
-    const data = await apiCall.json();
-    console.log(data)
-    return {data}
-};
+  var input = document.getElementById("search").value;
 
-const showData = () => {
-    fetchOrg(input.value).then((res) => {
-
-        res.data.map((obj) => {
-            container.innerHTMl = `Repo: <span class="data>"${obj.name}</span>`
-        })
-        
-    })
-};
-
-if(form){
-    form.addEventListener('Submit', showData())
-}
-
+  fetch(`https://api.github.com/orgs/${input}/repos`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      data.forEach((obj) => {
+        var div = $('<div>', {
+          "class": "bucket"
+        });
+        var span = $('<span>', {
+          "Repo:": obj.name,
+          "Description:": obj.description,
+          "URL:": obj.html_url
+        });
+        div.append(span).appendTo(".result");
+      });
+    });
+});

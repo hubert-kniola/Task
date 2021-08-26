@@ -1,21 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 .body{
     background-color: #cccccc;
-    font-family: 'OpenSans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container{
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 
-.input-form{
+.input{
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    border-radius: 5px;
 }
 
 
-.button-form{
+.button{
+    background-color: #0066cc;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}
 
+.button:hover{
+    background-color:#cccccc;
+    color: black;
+}
+
+.bucket{
+    width: 25rem;
+    height: 10rem;
+    border: solid;
+    border-color: #cccccc;
+    border-radius: 8px;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }

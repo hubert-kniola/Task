@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <meta name="viewport" />
     <title>GitHub API</title>
   </head>
@@ -10,16 +12,18 @@
     <div class="container">
       <h2>GitHub API</h2>
       <h3>Search for GitHub organizations:</h3>
-      <form id="mainForm" autocomplete="off">
-          <div class="input-form">
-              <input type="text" class="input-control" id="search" placeholder="Search Organizations">
+      <form id="form" autocomplete="off">
+          <div class="form-group">
+              <input type="text" class="input" id="search" placeholder="Search Organizations">
           </div>
-          <div class="button-form">
-              <button class="button">
+          <div class="form-group">
+              <button class="button" id='submit'>
                   Submit
               </button>
           </div>
       </form>
+      <div class="result">
+      </div>
     </div>
   </body>
   <script src="script.js"></script>
