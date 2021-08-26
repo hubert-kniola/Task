@@ -17,7 +17,7 @@ Task for recruitment
 </p>
 
 <p align="center">
-  <img src="screenshots/Screen3.png" title="Error">
+  <img src="screenshots/Screen3-1.png" title="Error">
 </p>
 
 <p align="center">
