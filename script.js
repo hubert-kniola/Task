@@ -46,7 +46,7 @@ form.addEventListener("submit", (e) => {
     .catch((err) => {
       console.log(err)
       var span = $('<span>', {
-        "text": "Nie znaleziono organizacji.",
+        "text": "Organization not found.",
         "id": "error-span"
       })
       span.appendTo(".result")
