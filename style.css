@@ -1,51 +1,100 @@
-
-.body{
-    background-color: #cccccc;
-    font-family: 'Roboto', sans-serif;
+.body {
+  background-color: #cccccc;
 }
 
-.container{
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
+.container {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 
-
-.input{
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    border-radius: 5px;
-    border-color: black;
+.input {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-radius: 5px;
+  border-color: black;
 }
 
-
-.button{
-    background-color: #0066cc;
-    color: white;
-    border-radius: 8px;
-    border: none;
+.button {
+  background-color: #0066cc;
+  color: white;
+  border-radius: 8px;
+  border: none;
 }
 
-.button:hover{
-    background-color:#cccccc;
-    color: black;
+.button:hover {
+  background-color: #cccccc;
+  color: black;
 }
 
-.bucket{
-    width: 25rem;
-    height: 8rem;
-    border: solid;
-    border-color: #cccccc;
-    border-radius: 8px;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+.bucket {
+  width: 25rem;
+  height: 8rem;
+  border: solid;
+  border-color: #cccccc;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.bucket:hover{
-    box-shadow: 3px 3px 3px black;
+.bucket:hover {
+  box-shadow: 3px 3px 3px black;
 }
 
-.popup{
+.popup-container {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  display: none;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  border: solid;
+  z-index: 10000;
+}
 
+.popup-container .helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.popup-container > div {
+  background-color: #fff;
+  box-shadow: 10px 10px 60px #555;
+  display: inline-block;
+  height: auto;
+  max-width: 350px;
+  min-height: 100px;
+  vertical-align: middle;
+  width: 60%;
+  position: relative;
+  border-radius: 8px;
+  border: 4px solid;
+  border-color: #cccccc;
+  padding: 15px 5%;
+}
+
+.popup-close {
+  background-color: #fff;
+  border: 3px solid #cccc;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.popup-close:hover {
+  background-color: #ccc;
 }

@@ -14,7 +14,6 @@ form.addEventListener("submit", (e) => {
         var div = $('<div>', {
           "class": "bucket",
           "id": obj.id,
-          "onClick": () => alert("siema")
         });
         var repo = $('<div>', {
           "text": `Repo: ${obj.name}`
@@ -32,6 +31,16 @@ form.addEventListener("submit", (e) => {
         div.append(repo).appendTo(".result");
         div.append(desc).appendTo(".result");
         div.append(urltext).append(url).appendTo(".result");
+
+        $( `#${obj.id}` ).click(function() {
+          isOpened = true
+          $("#popup-normalurl").text(` ${obj.html_url}`)
+          $("#popup-sshurl").text(` ${obj.ssh_url}`)
+          $("#popup-httpsurl").text(` ${obj.git_url}`)
+          $("#popup-stars").text(`Stars: ${obj.stargazers_count}`)
+          $("#popup-size").text(`Size: ${obj.size}`)
+          $('.popup-container').show();
+        });
       });
     })
     .catch((err) => {
@@ -42,4 +51,8 @@ form.addEventListener("submit", (e) => {
       })
       span.appendTo(".result")
     })
+});
+
+$('.popup-close').click(function(){
+  $('.popup-container').hide();
 });
